@@ -1,0 +1,222 @@
+/* Vista previade prenda */
+
+.card > img {
+  cursor: zoom-in;
+}
+
+.modal-prod-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(18, 10, 17, .74);
+  backdrop-filter: blur(5px);
+}
+
+.modal-prod-backdrop.is-visible {
+  display: flex;
+}
+
+.modal-prod-ventana {
+  position: relative;
+  width: min(100%, 780px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 58px 28px 28px;
+  border: 3px solid #9a2164;
+  background: #f5d8e7;
+  color: var(--vino);
+  box-shadow: 5px 5px 0 #db67a7, 10px 10px 28px rgba(0, 0, 0, .3);
+  text-align: left;
+  animation: modalProdEntrada .22s ease both;
+}
+
+.modal-prod-ventana::before {
+  content: "Vista_Previa.exe";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  font: .9rem 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(90deg, #ca1573, #efb1cf);
+}
+
+.modal-prod-cerrar {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #fff;
+  background: #f5cadf;
+  color: #6c2f56;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-prod-cuerpo {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 1.2fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.modal-prod-foto {
+  background: #fff;
+  padding: 10px;
+  border: 2px solid #d48fb0;
+}
+
+.modal-prod-foto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.modal-prod-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.modal-prod-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  background: var(--malva);
+  color: #fff;
+  font-size: .78rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.modal-prod-estado {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: 16px;
+  background: #25734d;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.modal-prod-estado.agotado {
+  background: #8a263f;
+}
+
+.modal-prod-info h2 {
+  margin: 4px 0 8px;
+  font-family: 'UnifrakturCook', cursive;
+  color: #ff1493;
+  font-size: 2.1rem;
+  -webkit-text-stroke: 0;
+  text-shadow: 2px 2px 0 #ffcce3;
+}
+
+.modal-prod-precio {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--rosa-fuerte);
+  margin-bottom: 12px;
+}
+
+.modal-prod-desc {
+  font-size: .98rem;
+  line-height: 1.55;
+  color: var(--vino);
+  background: rgba(255, 255, 255, .6);
+  padding: 10px 12px;
+  border-left: 3px solid #ca1573;
+  margin-bottom: 18px;
+}
+
+.modal-prod-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.modal-prod-acciones .btn {
+  flex: 1 1 160px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.btn-comprar-directo {
+  background: linear-gradient(to bottom, #ff66b2, #ca1573);
+  color: #fff;
+  border: 2px solid #9a2164;
+  border-radius: 0;
+  box-shadow: 3px 3px 0 #9a2164;
+}
+
+.btn-comprar-directo:hover {
+  background: #a8105f;
+  color: #fff;
+}
+
+.btn-la-quiero-modal {
+  border: 2px solid #b96f98;
+  border-radius: 0;
+  background: linear-gradient(to bottom, #ffb6d9, #e88aba);
+  color: #693057;
+  box-shadow: 3px 3px 0 #b96f98;
+}
+
+.btn-la-quiero-modal .ico {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  vertical-align: -5px;
+  margin-right: 6px;
+}
+
+@keyframes modalProdEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 680px) {
+  .modal-prod-cuerpo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* stock en la vista previa */
+.modal-prod-stock {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 6px 11px;
+  border-radius: 8px;
+  background: rgba(37, 115, 77, .12);
+  color: #25734d;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+.modal-prod-stock.agotado {
+  background: rgba(138, 38, 63, .12);
+  color: #8a263f;
+}

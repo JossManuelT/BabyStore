@@ -4,186 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Colección | Baby Store</title>
-  <!-- Fuentes: UnifrakturCook (títulos), Oswald (menú y botones), Fredoka (texto) -->
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="shortcut icon" type="image/png" href="img/logo.png">
+  <link rel="apple-touch-icon" href="img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Oswald:wght@500;600&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
-  <!-- Íconos: Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/modal-producto.css">
 </head>
 <body>
 
-  <!-- BARRA 1 -->
-  <div class="aviso"><span>Escribe “yo” al chat interno (solo si estás segur@ de comprar)<b>✦</b>Pagos: Yape, Plin o transferencia<b>✦</b>El primer pago confirmado se lleva la prenda<b>✦</b>3 minutos para pagar; luego pasa al siguiente cliente<b>✦</b>Separa con 50% y cancela el resto en máximo 2 días<b>✦</b>Envíos a todo el Perú<b>✦</b>No hay cambios ni devoluciones (prendas únicas)<b>✦</b>Escribe “yo” al chat interno (solo si estás segur@ de comprar)<b>✦</b>Pagos: Yape, Plin o transferencia<b>✦</b>El primer pago confirmado se lleva la prenda<b>✦</b>3 minutos para pagar; luego pasa al siguiente cliente<b>✦</b>Separa con 50% y cancela el resto en máximo 2 días<b>✦</b>Envíos a todo el Perú<b>✦</b>No hay cambios ni devoluciones (prendas únicas)<b>✦</b></span></div>
+  <div class="aviso"><span>Escribe al chat interno (solo si estás segur@ de comprar)<b>✦</b>Pagos: Yape, Plin o transferencia<b>✦</b>El primer pago confirmado se lleva la prenda<b>✦</b>3 minutos para pagar; luego pasa al siguiente cliente<b>✦</b>Separa con 50% y cancela el resto en máximo 2 días<b>✦</b>Envíos a todo el Perú<b>✦</b>No hay cambios ni devoluciones (prendas únicas)<b>✦</b>Escribe al chat interno (solo si estás segur@ de comprar)<b>✦</b>Pagos: Yape, Plin o transferencia<b>✦</b>El primer pago confirmado se lleva la prenda<b>✦</b>3 minutos para pagar; luego pasa al siguiente cliente<b>✦</b>Separa con 50% y cancela el resto en máximo 2 días<b>✦</b>Envíos a todo el Perú<b>✦</b>No hay cambios ni devoluciones (prendas únicas)<b>✦</b></span></div>
 
-  <!-- BARRA 2 -->
   <div class="cinta" aria-hidden="true"><span> ✦ NEW DROP ✦ PRENDAS ÚNICAS ✦ Y2K ✦ 90s ✦ VINTAGE ✦ NEW DROP ✦ PRENDAS ÚNICAS ✦ Y2K ✦ 90s ✦ VINTAGE ✦ </span></div>
 
-  <!-- BANNER -->
   <header class="banner">
-
-  <!-- BOTÓN HAMBURGUESA -->
-  <button
-    class="menu-toggle"
-    id="menuToggle"
-    type="button"
-    aria-label="Abrir menú"
-    aria-expanded="false"
-    aria-controls="menuPrincipal">
-    <i class="fa-solid fa-bars" aria-hidden="true"></i>
-  </button>
-
-  <!-- MENÚ PRINCIPAL -->
-  <nav class="menu-principal"
-       id="menuPrincipal"
-       aria-label="Navegación principal"
-       aria-hidden="true">
-
-    <button class="cerrar-menu"
-            id="cerrarMenu"
-            type="button"
-            aria-label="Cerrar menú">
-      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuPrincipal">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
     </button>
 
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="coleccion.html" class="activo" aria-current="page">Colección</a></li>
-      <li><a href="lo-nuevo.html">Lo nuevo</a></li>
-      <li>
-        <a href="#"
-           aria-disabled="true"
-           title="Sección en desarrollo">Categorías</a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- LOGO -->
-  <a class="logo" href="index.html">
-    <img src="img/logo.png" alt="Baby Store">
-  </a>
-
-  <!-- BUSCADOR Y CARRITO -->
-  <div class="herramientas">
-    <form class="buscador" role="search"
-          action="coleccion.html" method="get">
-      <input type="search" name="q" aria-label="Buscar prendas">
-      <button type="submit" aria-label="Buscar">
-        <i class="fa-solid fa-magnifying-glass"></i>
+    <nav class="menu-principal" id="menuPrincipal" aria-label="Navegación principal" aria-hidden="true">
+      <button class="cerrar-menu" id="cerrarMenu" type="button" aria-label="Cerrar menú">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
-    </form>
 
-    <a class="carrito" href="#" aria-label="Carrito">
-      <i class="fa-solid fa-cart-shopping"></i>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="coleccion.html" class="activo" aria-current="page">Colección</a></li>
+        <li><a href="lo-nuevo.html">Lo nuevo</a></li>
+        <li class="menu-categorias">
+          <button type="button" id="btnCategorias" aria-expanded="false" aria-controls="submenuCategorias">Categorías</button>
+          <ul class="submenu-categorias" id="submenuCategorias">
+            <li><a href="coleccion.html?categoria=all" data-categoria="all">Ver todo</a></li>
+            <li><a href="coleccion.html?categoria=polos" data-categoria="polos">Polos</a></li>
+            <li><a href="coleccion.html?categoria=tops" data-categoria="tops">Tops</a></li>
+            <li><a href="coleccion.html?categoria=blusas" data-categoria="blusas">Blusas</a></li>
+            <li><a href="coleccion.html?categoria=camisas" data-categoria="camisas">Camisas</a></li>
+            <li><a href="coleccion.html?categoria=pantalones" data-categoria="pantalones">Pantalones</a></li>
+            <li><a href="coleccion.html?categoria=abrigos" data-categoria="abrigos">Abrigos</a></li>
+            <li><a href="coleccion.html?categoria=casacas" data-categoria="casacas">Casacas</a></li>
+            <li><a href="coleccion.html?categoria=chalecos" data-categoria="chalecos">Chalecos</a></li>
+            <li><a href="coleccion.html?categoria=chompas" data-categoria="chompas">Chompas</a></li>
+            <li><a href="coleccion.html?categoria=carteras" data-categoria="carteras">Carteras</a></li>
+            <li><a href="coleccion.html?categoria=shorts" data-categoria="shorts">Shorts</a></li>
+            <li><a href="coleccion.html?categoria=zip_up" data-categoria="zip_up">Zip Up</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <a class="logo" href="index.html">
+      <img src="img/logo.png" alt="Baby Store">
     </a>
-  </div>
 
-</header>
+    <div class="herramientas">
+      <form class="buscador" role="search" action="coleccion.html" method="get">
+        <input type="search" name="q" aria-label="Buscar prendas">
+        <button type="submit" aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
 
-<!-- FONDO OSCURO DEL MENÚ -->
-<div class="menu-backdrop" id="menuBackdrop" hidden></div>
+      <a class="carrito" href="carrito.html" aria-label="Carrito">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu-backdrop" id="menuBackdrop" hidden></div>
 
   <main>
     <section>
       <h2>Colección vintage</h2>
       <p class="lead">Cada prenda es única: si la ves, ¡corre!</p>
-      <div class="grid">
-        <article class="card">
-          <span class="tag">Abrigo</span>
-          <img src="img/Abrigo_peluche_2000s_vintage.jpeg" alt="Abrigo peluche 2000s vintage">
-          <h3>Abrigo peluche 2000s vintage</h3>
-          <p class="price">S/150</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Gótico</span>
-          <img src="img/Polo_Y2K_gotico.jpeg" alt="Polo Y2K gótico">
-          <h3>Polo Y2K gótico</h3>
-          <p class="price">S/80</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Abrigo</span>
-          <img src="img/Jacket_2000s.jpeg" alt="Jacket 2000s">
-          <h3>Jacket 2000s</h3>
-          <p class="price">S/150</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Y2K</span>
-          <img src="img/Polo_Y2K.jpeg" alt="Polo Y2K">
-          <h3>Polo Y2K</h3>
-          <p class="price">S/70</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Falda</span>
-          <img src="img/Falda_grunge_con_pedreria.jpeg" alt="Falda grunge con pedrería">
-          <h3>Falda grunge con pedrería</h3>
-          <p class="price">S/95</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Top</span>
-          <img src="img/Top_2000s.jpeg" alt="Top 2000s">
-          <h3>Top 2000s</h3>
-          <p class="price">S/70</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Blusa</span>
-          <img src="img/Blusa_dosmilera.jpeg" alt="Blusa dosmilera">
-          <h3>Blusa dosmilera</h3>
-          <p class="price">S/80</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Denim</span>
-          <img src="img/Jean_a_la_cadera_Y2K.jpeg" alt="Jean a la cadera Y2K">
-          <h3>Jean a la cadera Y2K</h3>
-          <p class="price">S/110</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Y2K</span>
-          <img src="img/Pant_Juicy_Couture.jpeg" alt="Pant Juicy Couture">
-          <h3>Pant Juicy Couture</h3>
-          <p class="price">S/120</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Pantalón</span>
-          <img src="img/Pant_Yoga_Ultra_campana.jpeg" alt="Pant yoga ultra campana">
-          <h3>Pant yoga ultra campana</h3>
-          <p class="price">S/90</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Pantalón</span>
-          <img src="img/Buzo_Aeropostale.jpeg" alt="Buzo Aeropostale">
-          <h3>Buzo Aeropostale</h3>
-          <p class="price">S/90</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Grunge</span>
-          <img src="img/Polo_ROCK_GRUNGE.jpeg" alt="Polo rock grunge">
-          <h3>Polo rock grunge</h3>
-          <p class="price">S/75</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-        <article class="card">
-          <span class="tag">Y2K</span>
-          <img src="img/Polo_Y2K_winter.jpeg" alt="Polo Y2K winter">
-          <h3>Polo Y2K winter</h3>
-          <p class="price">S/85</p>
-          <a class="btn" href="#contacto"><img class="ico" src="img/coraz.png" alt=""> La quiero</a>
-        </article>
-      </div>
+      <div class="grid" id="contenedorProductos"></div>
     </section>
   </main>
 
-  <!-- WHATSAPP -->
   <a class="whatsapp" href="https://wa.me/51928042196" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
@@ -203,7 +102,7 @@
       </section>
       <section class="contacto">
         <h2>Contáctanos</h2>
-        <form class="formulario">
+        <form class="formulario" id="formularioContacto">
           <label for="nombre"><i class="fa-solid fa-user"></i> Nombre</label>
           <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
           <label for="email"><i class="fa-solid fa-envelope"></i> Correo</label>
@@ -213,17 +112,18 @@
           <button class="btn btn-enviar" type="submit">Enviar <i class="fa-solid fa-paper-plane"></i></button>
         </form>
         <p class="redes">
-          <!-- Facebook falta -->
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/babystore.pe_" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.tiktok.com/@babystore.pe_" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/babystore.pe_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@babystore.pe_" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </p>
       </section>
     </div>
   </footer>
 
-  <!-- Búsqueda de productos desde el parámetro ?q= de la barra de búsqueda. -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
   <script src="js/menu-compartido.js"></script>
+  <script src="js/modal-producto.js"></script>
   <script src="js/coleccion-busqueda.js"></script>
 </body>
 </html>

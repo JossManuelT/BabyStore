@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito | Baby Store</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="shortcut icon" type="image/png" href="img/logo.png">
+  <link rel="apple-touch-icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Oswald:wght@500;600&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/carrito.css">
+</head>
+<body>
+
+  <div class="cinta" aria-hidden="true"><span> ✦ NEW DROP ✦ PRENDAS ÚNICAS ✦ Y2K ✦ 90s ✦ VINTAGE ✦ NEW DROP ✦ PRENDAS ÚNICAS ✦ Y2K ✦ 90s ✦ VINTAGE ✦ </span></div>
+
+  <header class="banner">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuPrincipal">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <nav class="menu-principal" id="menuPrincipal" aria-label="Navegación principal" aria-hidden="true">
+      <button class="cerrar-menu" id="cerrarMenu" type="button" aria-label="Cerrar menú">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="coleccion.html">Colección</a></li>
+        <li><a href="lo-nuevo.html">Lo nuevo</a></li>
+        <li class="menu-categorias">
+          <button type="button" id="btnCategorias" aria-expanded="false" aria-controls="submenuCategorias">Categorías</button>
+          <ul class="submenu-categorias" id="submenuCategorias">
+            <li><a href="coleccion.html?categoria=all" data-categoria="all">Ver todo</a></li>
+            <li><a href="coleccion.html?categoria=polos" data-categoria="polos">Polos</a></li>
+            <li><a href="coleccion.html?categoria=tops" data-categoria="tops">Tops</a></li>
+            <li><a href="coleccion.html?categoria=blusas" data-categoria="blusas">Blusas</a></li>
+            <li><a href="coleccion.html?categoria=camisas" data-categoria="camisas">Camisas</a></li>
+            <li><a href="coleccion.html?categoria=pantalones" data-categoria="pantalones">Pantalones</a></li>
+            <li><a href="coleccion.html?categoria=abrigos" data-categoria="abrigos">Abrigos</a></li>
+            <li><a href="coleccion.html?categoria=casacas" data-categoria="casacas">Casacas</a></li>
+            <li><a href="coleccion.html?categoria=chalecos" data-categoria="chalecos">Chalecos</a></li>
+            <li><a href="coleccion.html?categoria=chompas" data-categoria="chompas">Chompas</a></li>
+            <li><a href="coleccion.html?categoria=carteras" data-categoria="carteras">Carteras</a></li>
+            <li><a href="coleccion.html?categoria=shorts" data-categoria="shorts">Shorts</a></li>
+            <li><a href="coleccion.html?categoria=zip_up" data-categoria="zip_up">Zip Up</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <a class="logo" href="index.html">
+      <img src="img/logo.png" alt="Baby Store">
+    </a>
+
+    <div class="herramientas">
+      <form class="buscador" role="search" action="coleccion.html" method="get">
+        <input type="search" name="q" aria-label="Buscar prendas" placeholder="Buscar">
+        <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <a class="carrito" href="carrito.html" aria-label="Carrito">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </a>
+    </div>
+  </header>
+
+  <div class="menu-backdrop" id="menuBackdrop" hidden></div>
+
+  <main class="carrito-main">
+    <h2>Tu carrito vintage</h2>
+    <p class="lead">Revisa tus prendas seleccionadas antes de confirmar tu compra.</p>
+
+    <div class="carrito-layout">
+      <section class="carrito-lista-wrap" aria-label="Prendas seleccionadas">
+        <div id="listaCarrito" class="carrito-lista"></div>
+        <div id="carritoVacio" class="carrito-vacio" hidden>
+          <p>Aún no has seleccionado ninguna prenda en tu carrito.</p>
+          <a class="btn" href="coleccion.html">Explorar colección</a>
+        </div>
+      </section>
+
+      <aside class="carrito-panel" aria-label="Resumen y condiciones de compra">
+        <h3>Resumen y modalidad de pago</h3>
+
+        <div class="resumen-montos">
+          <p>Total prendas: <strong id="totalPrendas">0</strong></p>
+          <p>Total estimado: <strong id="totalMonto">S/ 0.00</strong></p>
+          <p>Separación (50%): <strong id="montoSeparacion">S/ 0.00</strong></p>
+        </div>
+
+        <fieldset class="modalidades-pago">
+          <legend>Elige modalidad de pago</legend>
+          <label><input type="radio" name="metodoPago" value="Yape" checked> Yape</label>
+          <label><input type="radio" name="metodoPago" value="Plin"> Plin</label>
+          <label><input type="radio" name="metodoPago" value="Transferencia"> Transferencia bancaria</label>
+        </fieldset>
+
+        <fieldset class="modalidades-pago">
+          <legend>Tipo de confirmación</legend>
+          <label><input type="radio" name="tipoPago" value="Pago total (100%)" checked> Pago total (100%)</label>
+          <label><input type="radio" name="tipoPago" value="Separación (50% - saldo en máx. 2 días)"> Separar con 50% (saldo en máx. 2 días)</label>
+        </fieldset>
+
+        <div class="reglas-tienda">
+          <h4>Reglas de compra</h4>
+          <ul>
+            <li>Escribe al chat interno solo si estás segur@ de comprar (evitamos retener prendas únicas sin intención real de compra).</li>
+            <li>El primer pago confirmado se lleva la prenda (son piezas únicas).</li>
+            <li>Cuenta con 3 minutos para pagar una vez coordinado; luego pasa al siguiente cliente.</li>
+            <li>Separa con 50% y cancela el resto en máximo 2 días.</li>
+            <li>Envíos a todo el Perú. Sin cambios ni devoluciones por ser prendas únicas.</li>
+          </ul>
+          <label class="acepto-etica">
+            <input type="checkbox" id="aceptoReglasEticas">
+            <span>Confirmo que estoy segur@ de mi compra, acepto las reglas de prenda única y no reservaré sin intención real de pago.</span>
+          </label>
+        </div>
+
+        <p id="avisoEtico" class="aviso-etica" role="status" aria-live="polite"></p>
+
+        <button type="button" class="btn btn-realizar-compra" id="btnRealizarCompra">
+          Realizar compra por WhatsApp
+        </button>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer-simple">
+    <p class="copy">
+        © 2026 ౨ৎ BABY STORE ౨ৎ · Prendas vintage únicas
+    </p>
+    <div class="redes-footer">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/babystore.pe_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@babystore.pe_" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+</footer>
+
+  <script src="js/menu-compartido.js"></script>
+  <script src="js/carrito.js"></script>
+</body>
+</html>

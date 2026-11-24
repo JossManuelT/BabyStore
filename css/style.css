@@ -1,5 +1,4 @@
-/* BABY STORE - style.css */
-/* CAmbio paleta de colores */
+/* Estilos base y componentes compartidos de la tienda */
 :root {
   --rosa: #ff4fa3;
   --rosa-fuerte: #ff1493;
@@ -13,7 +12,6 @@
   --fondo: #fff5fa;
 }
 
-/* Base */
 * {
   margin: 0;
   padding: 0;
@@ -46,9 +44,7 @@ section {
   margin: 35px 0;
 }
 
-/* Títulos */
-h1,
-h2 {
+h1,h2 {
   font-family: 'UnifrakturCook', cursive;
   font-weight: 700;
   letter-spacing: 1px;
@@ -71,7 +67,6 @@ h2 {
   text-shadow: 0 0 6px #fff;
 }
 
-/* reglas de compra en movimiento  */
 .aviso {
   background: var(--marron);
   color: #fff;
@@ -101,7 +96,6 @@ h2 {
 .cinta {
   background: #000;
   color: #d48fb0;
-  /* rosa apagado */
   overflow: hidden;
   white-space: nowrap;
   font-family: 'Oswald', sans-serif;
@@ -112,10 +106,6 @@ h2 {
   text-align: center;
 }
 
-/*.cinta span {
-  display: inline-block;
-  animation: deslizar 35s linear infinite;
-}*/
 @keyframes deslizar {
   from {
     transform: translateX(0);
@@ -125,7 +115,6 @@ h2 {
   }
 }
 
-/* Banner */
 .banner {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -151,7 +140,6 @@ h2 {
   transform: scale(1.08) rotate(-2deg);
 }
 
-/* Menú */
 nav ul {
   list-style: none;
   display: flex;
@@ -180,7 +168,6 @@ nav a.activo {
   transform: translateY(-2px);
 }
 
-/* subrayado animado */
 nav a::after {
   content: "";
   position: absolute;
@@ -197,7 +184,6 @@ nav a.activo::after {
   width: 100%;
 }
 
-/* Buscador y carro */
 .herramientas {
   display: flex;
   align-items: center;
@@ -242,6 +228,10 @@ nav a.activo::after {
 }
 
 .carrito {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   font-size: 1.8rem;
   filter: drop-shadow(0 0 3px #000);
@@ -253,7 +243,54 @@ nav a.activo::after {
   transform: scale(1.15) rotate(-8deg);
 }
 
-/*  Hero */
+.carrito-contador {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--rosa-fuerte);
+  color: #fff;
+  border: 2px solid #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.carrito-contador[hidden] {
+  display: none;
+}
+
+.toast-carrito {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  z-index: 140;
+  background: var(--vino);
+  color: #fff;
+  border: 2px solid var(--rosa);
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.8px;
+  font-size: 0.92rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.toast-carrito.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero {
   position: relative;
   margin-top: 10px;
@@ -263,16 +300,10 @@ nav a.activo::after {
   background: linear-gradient(rgba(255, 255, 255, .05), rgba(255, 255, 255, .05)), url("../img/fondo_hero.jpg") center / cover, linear-gradient(135deg, #ffd1e8, #c8c8d2);
 }
 
-/*.hero h1 {
-  font-size: clamp(2.6rem, 7vw, 4.4rem);
-  margin: 6px 0;
-  animation: aparecer 1.5s ease both;
-}*/
 .hero .lead {
   font-size: 1.8rem;
 }
 
-/* polo plateado que se columpia */
 .polo {
   display: block;
   width: 120px;
@@ -291,7 +322,6 @@ nav a.activo::after {
   }
 }
 
-/* bolsa movimiento */
 .calle {
   position: relative;
   height: 90px;
@@ -334,7 +364,6 @@ nav a.activo::after {
   }
 }
 
-/* Tarjetas de prendas */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
@@ -389,17 +418,51 @@ nav a.activo::after {
 
 .tag {
   position: absolute;
-  top: 24px;
-  left: 24px;
-  z-index: 1;
-  padding: 2px 12px;
-  background: var(--malva);
-  color: #fff;
-  font-size: .8rem;
+  top: 22px;
+  left: 22px;
+  z-index: 3;
+  padding: 4px 11px;
+  background: #f2c3dc;
+  color: #54253f;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .4px;
   border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .18);
 }
 
-/* Botones (malva) con alas... */
+.producto-estado {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 4;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, .9);
+  border-radius: 16px;
+  background: #25734d;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, .22);
+}
+
+.producto-estado.agotado {
+  background: #8a263f;
+}
+
+.card.producto-agotado > img {
+  filter: grayscale(.75);
+  opacity: .8;
+}
+
+.card.producto-agotado .price {
+  color: #777;
+  animation: none;
+}
+
 .btn {
   position: relative;
   display: inline-block;
@@ -425,6 +488,13 @@ nav a.activo::after {
   transform: scale(1.06);
 }
 
+.btn[aria-disabled="true"],
+.btn:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .card .ico {
   display: inline-block;
   width: 30px;
@@ -433,7 +503,6 @@ nav a.activo::after {
   margin-right: 5px;
 }
 
-/* Burbuja de WhatsApp */
 .whatsapp {
   position: fixed;
   right: 20px;
@@ -468,7 +537,6 @@ nav a.activo::after {
   }
 }
 
-/* Pie de página */
 footer {
   margin-top: 40px;
   scroll-margin-top: 120px;
@@ -491,7 +559,6 @@ footer {
   margin: 0;
 }
 
-/* Columna izquierda */
 .nosotros {
   display: flex;
   align-items: center;
@@ -524,7 +591,6 @@ footer {
   line-height: 1.8;
 }
 
-/* Columna derecha: formulario y redes */
 .contacto {
   padding: 40px 20px;
   background: var(--fondo);
@@ -576,7 +642,6 @@ footer {
   transform: scale(1.15);
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .banner {
     grid-template-columns: 1fr;
@@ -607,7 +672,6 @@ footer {
   }
 }
 
-/* Búsqueda en la página Colección. */
 .card[hidden] {
   display: none !important;
 }
@@ -620,177 +684,17 @@ footer {
 }
 
 
-/* En computadora, el menú se mantiene horizontal. */
-.banner:not(.banner-inicio) .menu-toggle {
-  display: none;
+/* descripción y stock de las prendas*/
+.card-subdesc,
+.novedades-descripcion {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #7a5a6c;
 }
 
-.banner:not(.banner-inicio) .cerrar-menu {
-  display: none;
-}
-
-/* El fondo oscuro permanece oculto mientras el menú está cerrado. */
-.menu-backdrop[hidden] {
-  display: none !important;
-}
-
-.menu-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  background: rgba(0, 0, 0, .48);
-  opacity: 0;
-  transition: opacity .3s ease;
-}
-
-.menu-backdrop.is-visible {
-  opacity: 1;
-}
-
-/* Adaptación para celulares y tablets. */
-@media (max-width: 900px) {
-
-  .banner:not(.banner-inicio) {
-    display: grid;
-    grid-template-columns: 44px minmax(0, 1fr) 44px;
-    grid-template-areas:
-      "menu logo tools"
-      "search search search";
-    align-items: center;
-    justify-items: stretch;
-    row-gap: 9px;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 30;
-    padding: 8px 14px 12px;
-  }
-
-  /* Botón de las tres líneas. */
-  .banner:not(.banner-inicio) .menu-toggle {
-    grid-area: menu;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    border: 1px solid rgba(255,255,255,.65);
-    border-radius: 10px;
-    background: rgba(17,17,17,.55);
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-
-  /* Logo centrado. */
-  .banner:not(.banner-inicio) .logo {
-    grid-area: logo;
-    justify-self: center;
-  }
-
-  .banner:not(.banner-inicio) .logo img {
-    height: 82px;
-  }
-
-  /* Buscador y carrito. */
-  .banner:not(.banner-inicio) .herramientas {
-    display: contents;
-  }
-
-  .banner:not(.banner-inicio) .buscador {
-    grid-area: search;
-    display: flex;
-    justify-self: center;
-    width: min(100%, 420px);
-    max-width: 100%;
-    min-height: 42px;
-    margin: 0;
-  }
-
-  .banner:not(.banner-inicio) .buscador input {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .banner:not(.banner-inicio) .carrito {
-    grid-area: tools;
-    justify-self: end;
-    font-size: 1.25rem;
-  }
-
-  /* Panel lateral del menú. */
-  .banner:not(.banner-inicio) .menu-principal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 51;
-    width: min(82vw, 320px);
-    height: 100vh;
-    height: 100dvh;
-    padding: 88px 28px 30px;
-    overflow-y: auto;
-
-    /* Efecto transparente*/
-    background: rgba(74, 20, 57, .38);
-    backdrop-filter: blur(18px) saturate(160%);
-    -webkit-backdrop-filter: blur(18px) saturate(160%);
-
-    border-right: 1px solid rgba(255,255,255,.32);
-    box-shadow: 12px 0 30px rgba(1,1,1,.22);
-
-    transform: translateX(-110%);
-    visibility: hidden;
-    transition: transform .3s ease, visibility .3s ease;
-  }
-
-  .banner:not(.banner-inicio) .menu-principal.is-active {
-    transform: translateX(0);
-    visibility: visible;
-  }
-
-  /* Enlaces en columna. */
-  .banner:not(.banner-inicio) .menu-principal ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 22px;
-  }
-
-  .banner:not(.banner-inicio) .menu-principal a {
-    font-size: 1.25rem;
-  }
-
-  /* Botón X para cerrar. */
-  .banner:not(.banner-inicio) .cerrar-menu {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    display: inline-grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border: 1px solid rgba(255,255,255,.35);
-    border-radius: 10px;
-    background: rgba(255,255,255,.12);
-    color: #fff;
-    font-size: 1.35rem;
-    cursor: pointer;
-  }
-
-  /* Evita que la página se desplace detrás del menú. */
-  body.menu-abierto {
-    overflow: hidden;
-  }
-
-  body.menu-abierto .banner:not(.banner-inicio) {
-    z-index: 60;
-  }
-}
-
-/* Respeta la preferencia de movimiento reducido. */
-@media (prefers-reduced-motion: reduce) {
-  .banner:not(.banner-inicio) .menu-principal,
-  .menu-backdrop {
-    transition: none;
-  }
+.novedades-fecha {
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: #9b7e8e;
 }

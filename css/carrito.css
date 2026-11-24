@@ -1,0 +1,234 @@
+/* BABY STORE - carrito.css */
+.carrito-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  align-items: start;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.carrito-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.carrito-item {
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  background: #fff;
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.carrito-item.es-compra-directa {
+  border: 2px solid var(--rosa-fuerte);
+  box-shadow: 0 6px 18px rgba(255, 20, 147, .18);
+}
+
+.carrito-item img {
+  width: 88px;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carrito-item-cat {
+  font-size: .78rem;
+  text-transform: uppercase;
+  color: var(--malva-osc);
+  font-weight: 600;
+}
+
+.badge-compra-directa {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--rosa-claro);
+  color: var(--rosa-fuerte);
+  font-family: 'Oswald', sans-serif;
+  font-size: .72rem;
+  letter-spacing: .6px;
+}
+
+.carrito-item-precio {
+  font-weight: 700;
+  color: var(--rosa-fuerte);
+  font-size: 1.15rem;
+}
+
+.aviso-compra-directa {
+  background: var(--rosa-claro);
+  border: 2px solid var(--rosa);
+  color: var(--vino);
+  padding: 10px 14px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  font-size: .92rem;
+  font-weight: 600;
+}
+
+.btn-quitar {
+  background: transparent;
+  border: 1px solid var(--vino);
+  color: var(--vino);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.btn-quitar:hover {
+  background: var(--vino);
+  color: #fff;
+}
+
+.carrito-vacio {
+  background: #fff;
+  padding: 32px 20px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+}
+
+.carrito-panel {
+  background: #fff;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .1);
+}
+
+.carrito-panel h3 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.resumen-montos p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.modalidades-pago {
+  border: 1px solid var(--rosa-claro);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalidades-pago legend {
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+.modalidades-pago label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.reglas-tienda {
+  background: var(--fondo);
+  border-left: 3px solid var(--rosa-fuerte);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: .9rem;
+}
+
+.reglas-tienda h4 {
+  margin-bottom: 6px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.reglas-tienda ul {
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+.reglas-tienda li {
+  margin-bottom: 5px;
+}
+
+.acepto-etica {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.aviso-etica {
+  min-height: 20px;
+  color: #9a2164;
+  font-weight: 600;
+  font-size: .9rem;
+  margin-bottom: 10px;
+}
+
+.btn-realizar-compra {
+  width: 100%;
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .carrito-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-simple{
+    background:#4a2c3d;
+    padding:20px 15px;
+    text-align:center;
+}
+
+.footer-simple .copy{
+    margin:0;
+    color:#fff;
+    font-size:1rem;
+    font-weight:600;
+}
+
+.redes-footer{
+    margin-top:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+}
+
+.redes-footer a{
+    color:#fff;
+    font-size:1.6rem;
+    transition:.3s;
+}
+
+.redes-footer a:hover{
+    color:#ff77c5;
+    transform:scale(1.1);
+}
+
+
+/* Información de stock */
+.carrito-item-stock {
+  margin-top: 5px;
+  color: #6c805f;
+  font-size: .78rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
