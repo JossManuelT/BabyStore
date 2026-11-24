@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tallas y Precios | Baby Store</title>
+  <!-- Fuentes: UnifrakturCook (títulos), Oswald (menú y botones), Fredoka (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Oswald:wght@500;600&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <!-- Íconos: Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- BARRA 1 -->
+  <div class="aviso"><span>Escribe “yo” al chat interno (solo si estás segur@ de comprar)<b>✦</b>Pagos: Yape, Plin o transferencia<b>✦</b>El primer pago confirmado se lleva la prenda<b>✦</b>3 minutos para pagar; luego pasa al siguiente cliente<b>✦</b>Separa con 50% y cancela el resto en máximo 2 días<b>✦</b>Envíos a todo el Perú<b>✦</b>No hay cambios ni devoluciones (prendas únicas)<b>✦</b>Escribe “yo” al chat interno (solo si estás segur@ de comprar)<b>✦</b>Pagos: Yape, Plin o transferencia<b>✦</b>El primer pago confirmado se lleva la prenda<b>✦</b>3 minutos para pagar; luego pasa al siguiente cliente<b>✦</b>Separa con 50% y cancela el resto en máximo 2 días<b>✦</b>Envíos a todo el Perú<b>✦</b>No hay cambios ni devoluciones (prendas únicas)<b>✦</b></span></div>
+
+  <!-- BARRA 2 -->
+  <div class="cinta" aria-hidden="true"><span> ✦ NEW DROP ✦ PRENDAS ÚNICAS ✦ Y2K ✦ 90s ✦ VINTAGE ✦ NEW DROP ✦ PRENDAS ÚNICAS ✦ Y2K ✦ 90s ✦ VINTAGE ✦ </span></div>
+
+  <!-- BANNER -->
+  <header class="banner">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li><li><a href="coleccion.html">Colección</a></li><li><a href="lo-nuevo.html">Lo nuevo</a></li><li><a href="tallas.html" class=activo>Tallas y Precios</a></li>
+      </ul>
+    </nav>
+    <a class="logo" href="index.html">
+      <img src="img/logo.png" alt="Baby Store">
+    </a>
+    <div class="herramientas">
+      <form class="buscador" role="search">
+        <input type="search" name="q" aria-label="Buscar prendas">
+        <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <a class="carrito" href="#" aria-label="Carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Tallas y precios</h2>
+      <!-- tallas y precios -->
+      <div class="tabla-scroll">
+        <table class="tabla-precios">
+          <thead>
+            <tr><th>Prenda</th><th>Talla</th><th>Precio</th></tr>
+          </thead>
+          <tbody>
+          <tr><td>Abrigo peluche 2000s vintage</td><td>M</td><td>S/150</td></tr>
+          <tr><td>Polo Y2K gótico</td><td>M</td><td>S/80</td></tr>
+          <tr><td>Jacket 2000s</td><td>M</td><td>S/150</td></tr>
+          <tr><td>Polo Y2K</td><td>M</td><td>S/70</td></tr>
+          <tr><td>Falda grunge con pedrería</td><td>S</td><td>S/95</td></tr>
+          <tr><td>Top 2000s</td><td>S</td><td>S/70</td></tr>
+          <tr><td>Blusa dosmilera</td><td>M</td><td>S/80</td></tr>
+          <tr><td>Jean a la cadera Y2K</td><td>M</td><td>S/110</td></tr>
+          <tr><td>Pant Juicy Couture</td><td>S</td><td>S/120</td></tr>
+          <tr><td>Pant yoga ultra campana</td><td>M</td><td>S/90</td></tr>
+          <tr><td>Buzo Aeropostale</td><td>M</td><td>S/90</td></tr>
+          <tr><td>Polo rock grunge</td><td>L</td><td>S/75</td></tr>
+          <tr><td>Polo Y2K winter</td><td>S</td><td>S/85</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- WHATSAPP -->
+  <a class="whatsapp" href="https://wa.me/51999999999" target="_blank" aria-label="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer id="contacto">
+    <div class="copy">
+      <p>© 2026 ౨ৎ BABY STORE ౨ৎ · Prendas vintage únicas</p>
+    </div>
+    <div class="pie-grid">
+      <section class="nosotros">
+        <img src="img/logo.png" alt="Logo Baby Store">
+        <div>
+          <h2>Sobre nosotros</h2>
+          <p>En Baby Store seleccionamos piezas vintage únicas que destacan por su calidad, estilo e historia.</p>
+          <p>Rescatamos prendas icónicas del pasado para darles una nueva vida y acercarlas a quienes buscan una moda auténtica y atemporal.</p>
+        </div>
+      </section>
+      <section class="contacto">
+        <h2>Contáctanos</h2>
+        <form class="formulario">
+          <label for="nombre"><i class="fa-solid fa-user"></i> Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          <label for="email"><i class="fa-solid fa-envelope"></i> Correo</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+          <label for="mensaje"><i class="fa-solid fa-comment-dots"></i> Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿Qué prenda te gustó?"></textarea>
+          <button class="btn btn-enviar" type="submit">Enviar <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p class="redes">
+          <!-- falta Facebook -->
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/babystore.pe_" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@babystore.pe_" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </p>
+      </section>
+    </div>
+  </footer>
+
+</body>
+</html>

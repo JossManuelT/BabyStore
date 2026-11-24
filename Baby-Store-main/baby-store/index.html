@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Baby Store</title>
+  <!-- Fuentes: UnifrakturCook (títulos), Oswald (menú y botones), Fredoka (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Oswald:wght@500;600&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <!-- Íconos: Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- NUEVO: estilos exclusivos del inicio para no mezclar cambios con otras páginas. -->
+  <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+
+  <!-- BARRA 1: reglas de compra 
+  <div class="aviso"><span>Escribe “yo” al chat interno (solo si estás segur@ de comprar)<b>✦</b>Pagos: Yape, Plin o transferencia<b>✦</b>El primer pago confirmado se lleva la prenda<b>✦</b>3 minutos para pagar; luego pasa al siguiente cliente<b>✦</b>Separa con 50% y cancela el resto en máximo 2 días<b>✦</b>Envíos a todo el Perú<b>✦</b>No hay cambios ni devoluciones (prendas únicas)<b>✦</b>Escribe “yo” al chat interno (solo si estás segur@ de comprar)<b>✦</b>Pagos: Yape, Plin o transferencia<b>✦</b>El primer pago confirmado se lleva la prenda<b>✦</b>3 minutos para pagar; luego pasa al siguiente cliente<b>✦</b>Separa con 50% y cancela el resto en máximo 2 días<b>✦</b>Envíos a todo el Perú<b>✦</b>No hay cambios ni devoluciones (prendas únicas)<b>✦</b></span></div> -->
+  <!-- BARRA 2 -->
+  <div class="cinta" aria-hidden="true"><span> ✦ NEW DROP ✦ PRENDAS ÚNICAS ✦ Y2K ✦ 90s ✦ VINTAGE ✦ NEW DROP ✦ PRENDAS ÚNICAS ✦ Y2K ✦ 90s ✦ VINTAGE ✦ </span></div>
+
+  <!-- BANNER: se conserva la identidad visual y se agrega navegación móvil. -->
+  <header class="banner banner-inicio">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuPrincipal">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <nav class="menu-principal" id="menuPrincipal" aria-label="Navegación principal" aria-hidden="true">
+      <button class="cerrar-menu" id="cerrarMenu" type="button" aria-label="Cerrar menú">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <ul>
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="coleccion.html">Colección</a></li>
+        <li><a href="lo-nuevo.html">Lo nuevo</a></li>
+        <!-- Categorías queda como acceso visual; su página/funcionalidad la desarrollará otro integrante. -->
+        <li><a href="tallas.html">Tallas y Precios</a></li>
+      </ul>
+    </nav>
+
+    <a class="logo" href="index.html" aria-label="Baby Store - Inicio">
+      <img src="img/logo.png" alt="Baby Store">
+    </a>
+
+    <div class="herramientas">
+      <form class="buscador" role="search" action="coleccion.html" method="get">
+        <input type="search" name="q" aria-label="Buscar prendas" placeholder="Buscar">
+        <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <a class="carrito" href="#" aria-label="Carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </header>
+  <!-- Fondo oscuro que permite cerrar el menú móvil tocando fuera del panel. -->
+  <div class="menu-backdrop" id="menuBackdrop" hidden></div>
+
+  <main class="inicio-main">
+    <!-- HERO: conserva las imágenes y el estilo del proyecto, pero añade una acción secundaria. -->
+    <section class="hero hero-inicio">
+      <img class="polo" src="img/polo_plateado.png" alt="Polo plateado de estilo Y2K">
+      <h1><img class="titulo-hero" src="img/titulo_hero.png" alt="Prendas vintage únicas"></h1>
+      <p class="lead">Estilo Y2K y años 90, con nuevos drops cada semana.</p>
+      <div class="hero-acciones">
+        <a class="btn" href="coleccion.html">Ver colección</a>
+        <!-- Semana 14: abre una ventana modal con información de compra. -->
+        <button class="btn btn-secundario" id="abrirModal" type="button">Cómo comprar</button>
+      </div>
+    </section>
+
+    <!-- Se conserva el pequeño recurso animado original de la tienda. -->
+    <section class="juego">
+      <h2>Corre a tu prenda favorita</h2>
+      <div class="calle" aria-hidden="true">
+        <i class="fa-solid fa-bag-shopping runner"></i>
+        <i class="fa-solid fa-store tienda"></i>
+      </div>
+    </section>
+
+    <!-- Nueva presentación de categorías: solo acceso visual, sin funcionalidad todavía. -->
+    <section class="bloque-categorias" aria-labelledby="titulo-categorias">
+      <div class="encabezado-seccion">
+        <p class="eyebrow">ENCUENTRA TU VIBE</p>
+        <h2 id="titulo-categorias">Explora nuestros estilos</h2>
+        <p>Prendas con personalidad para expresar tu propio estilo.</p>
+      </div>
+      <div class="categorias-preview">
+        <article class="categoria-preview categoria-y2k">
+          <span>01 / DOSMILERO</span><h3>Y2K</h3>
+        </article>
+        <article class="categoria-preview categoria-grunge">
+          <span>02 / ALTERNATIVO</span><h3>GRUNGE</h3>
+        </article>
+        <article class="categoria-preview categoria-gotico">
+          <span>03 / DARK VIBES</span><h3>GÓTICO</h3>
+        </article>
+      </div>
+      <!--sección categorías y filtros-->
+      <p class="nota-categorias"> Explora, combina y encuentra la pieza que mejor va contigo ✧</p>
+    </section>
+
+    <!-- Semana 12: los productos se almacenan en un arreglo. Semana 13: JS crea las tarjetas en este contenedor. -->
+    <section class="productos-inicio" aria-labelledby="titulo-productos">
+      <div class="encabezado-seccion">
+        <p class="eyebrow">PIEZAS SELECCIONADAS</p>
+        <h2 id="titulo-productos">Colección vintage destacada</h2>
+        <p>Prendas especiales que pueden convertirse en tus favoritas.</p>
+      </div>
+      <div class="grid" id="productosDestacados" aria-live="polite">
+        <!-- JavaScript insertará aquí las tarjetas de productos. -->
+      </div>
+      <a class="enlace-coleccion" href="coleccion.html">VER TODA LA COLECCIÓN <i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+  </main>
+
+  <!-- Semana 14: modal accesible para explicar el proceso de compra. -->
+  <div class="modal-backdrop" id="modalCompra" aria-hidden="true">
+    <section class="modal-compra" role="dialog" aria-modal="true" aria-labelledby="tituloModalCompra">
+      <button class="modal-cerrar" id="cerrarModal" type="button" aria-label="Cerrar ventana">&times;</button>
+      <p class="eyebrow">ANTES DE ELEGIR TU PRENDA</p>
+      <h2 id="tituloModalCompra">¿Cómo comprar?</h2>
+      <ol>
+        <li>Explora la colección y elige la prenda que te guste.</li>
+        <li>Escribe “yo” por el chat interno solo si estás segur@ de comprar.</li>
+        <li>El primer pago confirmado se lleva la prenda.</li>
+        <li>Puedes separar con el 50% y cancelar el resto en un máximo de 2 días.</li>
+      </ol>
+      <p class="modal-nota">Pagos por Yape, Plin o transferencia. Envíos a todo el Perú. Revisa las condiciones de compra antes de confirmar.</p>
+      <button class="btn" id="entendidoModal" type="button">Entendido</button>
+    </section>
+  </div>
+
+  <!-- WhatsApp oficial de Baby Store. -->
+  <a class="whatsapp" href="https://wa.me/51928042196" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer id="contacto">
+    <div class="copy">
+      <p>© 2026 ౨ৎ BABY STORE ౨ৎ · Prendas vintage únicas</p>
+    </div>
+    <div class="pie-grid">
+      <section class="nosotros">
+        <img src="img/logo.png" alt="Logo Baby Store">
+        <div>
+          <h2>Sobre nosotros</h2>
+          <p>En Baby Store seleccionamos piezas vintage únicas que destacan por su calidad, estilo e historia.</p>
+          <p>Rescatamos prendas icónicas del pasado para darles una nueva vida y acercarlas a quienes buscan una moda auténtica y atemporal.</p>
+        </div>
+      </section>
+      <section class="contacto">
+        <h2>Contáctanos</h2>
+        <!-- El formulario prepara un mensaje y lo envía a WhatsApp al confirmar. -->
+        <form class="formulario" id="formularioContacto">
+          <label for="nombre"><i class="fa-solid fa-user"></i> Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
+
+          <label for="email"><i class="fa-solid fa-envelope"></i> Correo (opcional)</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" autocomplete="email">
+
+          <label for="mensaje"><i class="fa-solid fa-comment-dots"></i> Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿Qué prenda te gustó? Cuéntanos tu consulta..." required></textarea>
+
+          <button class="btn btn-enviar" type="submit">Enviar <i class="fa-solid fa-paper-plane"></i></button>
+          <p class="contacto-ayuda" id="contactoAyuda">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+        </form>
+        <p class="redes">
+          <a href="https://www.instagram.com/babystore.pe_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@babystore.pe_" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </p>
+      </section>
+    </div>
+  </footer>
+
+  <!-- JavaScript propio de la página de inicio (semanas 11 a 14). -->
+<script src="js/supabase-config.js"></script>
+<script src="js/inicio.js"></script>
+</body>
+</html>

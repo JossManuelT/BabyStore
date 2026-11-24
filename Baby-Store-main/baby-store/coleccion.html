@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colección | Baby Store</title>
+  <!-- Fuentes: UnifrakturCook (títulos), Oswald (menú y botones), Fredoka (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Oswald:wght@500;600&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <!-- Íconos: Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/coleccion.css">
+</head>
+<body>
+
+  <!-- BARRA 1 -->
+  <div class="aviso"><span>Escribe “yo” al chat interno (solo si estás segur@ de comprar)<b>✦</b>Pagos: Yape, Plin o transferencia<b>✦</b>El primer pago confirmado se lleva la prenda<b>✦</b>3 minutos para pagar; luego pasa al siguiente cliente<b>✦</b>Separa con 50% y cancela el resto en máximo 2 días<b>✦</b>Envíos a todo el Perú<b>✦</b>No hay cambios ni devoluciones (prendas únicas)<b>✦</b>Escribe “yo” al chat interno (solo si estás segur@ de comprar)<b>✦</b>Pagos: Yape, Plin o transferencia<b>✦</b>El primer pago confirmado se lleva la prenda<b>✦</b>3 minutos para pagar; luego pasa al siguiente cliente<b>✦</b>Separa con 50% y cancela el resto en máximo 2 días<b>✦</b>Envíos a todo el Perú<b>✦</b>No hay cambios ni devoluciones (prendas únicas)<b>✦</b></span></div>
+
+  <!-- BARRA 2 -->
+  <div class="cinta" aria-hidden="true"><span> ✦ NEW DROP ✦ PRENDAS ÚNICAS ✦ Y2K ✦ 90s ✦ VINTAGE ✦ NEW DROP ✦ PRENDAS ÚNICAS ✦ Y2K ✦ 90s ✦ VINTAGE ✦ </span></div>
+
+  <!-- BANNER -->
+  <header class="banner">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li><li><a href="coleccion.html" class="activo">Colección</a></li><li><a href="lo-nuevo.html">Lo nuevo</a></li><li><a href="tallas.html">Tallas y Precios</a></li>
+      </ul>
+    </nav>
+    <a class="logo" href="index.html">
+      <img src="img/logo.png" alt="Baby Store">
+    </a>
+    <div class="herramientas">
+      <form class="buscador" role="search" action="coleccion.html" method="get">
+        <input type="search" name="q" aria-label="Buscar prendas">
+        <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <a class="carrito" href="#" aria-label="Carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </header>
+
+  <main class="catalogo-pagina">
+    <section class="catalogo-hero" aria-labelledby="titulo-coleccion">
+      <p class="catalogo-kicker">BABY STORE / ARCHIVO VINTAGE</p>
+      <h1 id="titulo-coleccion">La colección</h1>
+      <p>Explora todas nuestras prendas únicas. Encuentra tu estilo, filtra por categoría y ordénalas a tu manera.</p>
+      <div class="catalogo-guia"><span>✦ Piezas seleccionadas</span><span>✦ Y2K / 90s / Vintage</span><span>✦ Stock limitado</span></div>
+    </section>
+
+    <section class="catalogo-layout" aria-label="Explorar prendas">
+      <aside class="catalogo-lateral" aria-labelledby="filtros-titulo">
+        <div class="catalogo-lateral-cabecera"><h2 id="filtros-titulo">Explora</h2><span>✦</span></div>
+        <p class="catalogo-mini">Filtra tu selección</p>
+        <div id="filtrosCategorias" class="catalogo-categorias" role="group" aria-label="Filtrar por categoría">
+          <button class="catalogo-categoria seleccionada" type="button" data-categoria="Todas" aria-pressed="true">Todas las prendas</button>
+        </div>
+        <div class="catalogo-lateral-pie">♡ Cada prenda tiene su propia historia.</div>
+      </aside>
+
+      <div class="catalogo-contenido">
+        <div class="catalogo-barra">
+          <div><p class="catalogo-etiqueta">TU SELECCIÓN</p><h2>Descubre tu próxima prenda</h2><p id="estadoColeccion" class="resultado-busqueda" role="status" aria-live="polite">Cargando colección...</p></div>
+          <div class="catalogo-ordenador"><label for="ordenColeccion">Ordenar por</label>
+            <select id="ordenColeccion" aria-label="Ordenar prendas">
+              <option value="categoria">Categoría (A-Z)</option>
+              <option value="nombre">Nombre (A-Z)</option>
+              <option value="precio-asc">Menor precio</option>
+              <option value="precio-desc">Mayor precio</option>
+              <option value="recientes">Más recientes</option>
+            </select>
+          </div>
+        </div>
+        <div class="catalogo-raya" aria-hidden="true"></div>
+        <div class="catalogo-grilla" id="catalogoProductos" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Formulario de solicitud: no procesa pagos ni reserva automáticamente -->
+  <dialog id="dialogoPedido" class="pedido-dialog" aria-labelledby="pedidoTitulo">
+    <div class="pedido-cabecera">
+      <h2 id="pedidoTitulo">Solicitar prenda</h2>
+      <button type="button" id="pedidoCerrar" class="pedido-cerrar" aria-label="Cerrar solicitud">×</button>
+    </div>
+    <p id="pedidoDetalle"></p>
+    <form id="formularioPedido" class="pedido-formulario">
+      <label for="pedidoNombre">Tu nombre</label>
+      <input id="pedidoNombre" name="nombre" required minlength="2" maxlength="80" autocomplete="name" placeholder="Nombre y apellido">
+      <label for="pedidoWhatsApp">Tu WhatsApp (solo números)</label>
+      <input id="pedidoWhatsApp" name="whatsapp" type="tel" required inputmode="numeric" pattern="[0-9]{9,15}" minlength="9" maxlength="15" placeholder="Ej. 999888777">
+      <p class="pedido-privacidad">Usaremos estos datos únicamente para comunicarnos sobre esta solicitud. No ingreses datos bancarios.</p>
+      <button id="pedidoEnviar" class="btn" type="submit">Enviar solicitud</button>
+      <p id="pedidoMensaje" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+  <!-- WHATSAPP -->
+  <a class="whatsapp" href="https://wa.me/51999999999" target="_blank" aria-label="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer id="contacto">
+    <div class="copy">
+      <p>© 2026 ౨ৎ BABY STORE ౨ৎ · Prendas vintage únicas</p>
+    </div>
+    <div class="pie-grid">
+      <section class="nosotros">
+        <img src="img/logo.png" alt="Logo Baby Store">
+        <div>
+          <h2>Sobre nosotros</h2>
+          <p>En Baby Store seleccionamos piezas vintage únicas que destacan por su calidad, estilo e historia.</p>
+          <p>Rescatamos prendas icónicas del pasado para darles una nueva vida y acercarlas a quienes buscan una moda auténtica y atemporal.</p>
+        </div>
+      </section>
+      <section class="contacto">
+        <h2>Contáctanos</h2>
+        <form class="formulario">
+          <label for="nombre"><i class="fa-solid fa-user"></i> Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          <label for="email"><i class="fa-solid fa-envelope"></i> Correo</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+          <label for="mensaje"><i class="fa-solid fa-comment-dots"></i> Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿Qué prenda te gustó?"></textarea>
+          <button class="btn btn-enviar" type="submit">Enviar <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p class="redes">
+          <!-- Facebook falta -->
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/babystore.pe_" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@babystore.pe_" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </p>
+      </section>
+    </div>
+  </footer>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="js/coleccion.js"></script>
+</body>
+</html>

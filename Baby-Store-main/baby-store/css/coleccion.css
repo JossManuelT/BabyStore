@@ -1,0 +1,53 @@
+/* Solo Coleccion: no modifica Lo Nuevo ni Inicio */
+.catalogo-pagina {max-width: 1320px; padding: 26px 24px 65px; text-align:left;}
+.catalogo-hero {margin: 12px 0 30px; border-radius: 22px; padding: 38px 42px 30px; background: linear-gradient(115deg,#4a2c3d 0%,#6c3a59 60%,#ad668a 100%); color:#fff4fa; position:relative; overflow:hidden;}
+.catalogo-hero::after {content:'✦'; position:absolute; right:6%; top:-55px; font-size:230px; opacity:.12; pointer-events:none;}
+.catalogo-kicker, .catalogo-etiqueta {font-family:'Oswald',sans-serif; font-size:.8rem; letter-spacing:.19em; text-transform:uppercase;}
+.catalogo-hero h1 {font-size:clamp(2.9rem,6vw,5.2rem); color:#ffd3e8; margin:4px 0 12px;}
+.catalogo-hero>p:not(.catalogo-kicker) {max-width:610px; line-height:1.55;}
+.catalogo-guia {display:flex; flex-wrap:wrap; gap:12px 30px; margin-top:24px; font-family:'Oswald',sans-serif; letter-spacing:.04em; font-size:.85rem; color:#ffd3e8;}
+.catalogo-layout {display:grid; grid-template-columns:235px minmax(0,1fr); align-items:start; gap:30px; margin:0;}
+.catalogo-lateral {border:1px solid #efd2e1; border-radius:18px; padding:22px 18px; background:#fff; box-shadow:0 5px 24px #4a2c3d0c; position:sticky; top:16px;}
+.catalogo-lateral-cabecera {display:flex; justify-content:space-between; align-items:center; color:#b87494;}
+.catalogo-lateral h2 {font-size:2rem; margin:0;}
+.catalogo-mini {font-size:.85rem; margin:6px 0 18px; color:#775f6d;}
+.catalogo-categorias {display:grid; gap:6px;}
+.catalogo-categoria {appearance:none; cursor:pointer; border:1px solid transparent; color:#4a2c3d; background:transparent; padding:12px 10px; border-radius:10px; display:flex; justify-content:space-between; align-items:center; text-align:left; font:600 .92rem 'Fredoka',sans-serif;}
+.catalogo-categoria:hover, .catalogo-categoria:focus-visible {background:#ffecf4; outline-color:#b87494;}
+.catalogo-categoria.seleccionada {background:#4a2c3d; color:#fff;}
+.catalogo-numero {border-radius:20px; padding:1px 8px; background:#f2dbe7; color:#4a2c3d; font-size:.8rem;}
+.catalogo-lateral-pie {border-top:1px solid #f0dce6; margin-top:24px; padding-top:20px; font-size:.82rem; color:#a05d80;}
+.catalogo-contenido {min-width:0;}
+.catalogo-barra {display:flex; justify-content:space-between; align-items:end; gap:20px; flex-wrap:wrap;}
+.catalogo-etiqueta {color:#ab6689;}
+.catalogo-barra h2 {font-size:2rem; margin:3px 0 5px;}
+.catalogo-barra .resultado-busqueda {font-size:.92rem; color:#805d6d; text-align:left;}
+.catalogo-ordenador {display:grid; gap:5px; min-width:175px;}
+.catalogo-ordenador label {font:600 .85rem 'Fredoka',sans-serif;}
+.catalogo-ordenador select {width:100%; border-radius:10px; border:1px solid #d9abc1; background:#fff; color:#4a2c3d; padding:10px 12px; font:500 .9rem 'Fredoka',sans-serif;}
+.catalogo-raya {height:1px; background:#e9cbdc; margin:19px 0 22px;}
+.catalogo-grilla {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;}
+.catalogo-grilla .catalogo-tarjeta {min-width:0; margin:0; text-align:left; padding:12px 12px 17px; border-radius:14px;}
+.catalogo-imagen {aspect-ratio:4/5; background:#f5e5ee; overflow:hidden; border-radius:9px;}
+.catalogo-grilla .catalogo-imagen img {width:100%; height:100%; object-fit:cover; display:block;}
+.catalogo-grilla .catalogo-tarjeta .tag {display:inline-block; margin:12px 0 4px;}
+.catalogo-grilla .catalogo-tarjeta h3 {font-size:1rem; line-height:1.4; margin:3px 0;}
+.catalogo-grilla .catalogo-tarjeta .price {margin:6px 0 12px;}
+.catalogo-grilla .catalogo-tarjeta .btn {display:inline-block; font-size:.86rem;}
+@media (max-width:900px) {.catalogo-layout{grid-template-columns:190px minmax(0,1fr);gap:20px}.catalogo-grilla{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px) {.catalogo-pagina{padding:15px 12px 35px}.catalogo-hero{padding:26px 22px}.catalogo-layout{grid-template-columns:1fr}.catalogo-lateral{position:static}.catalogo-categorias{display:flex;overflow-x:auto;gap:8px;padding-bottom:5px}.catalogo-categoria{white-space:nowrap;gap:9px;border:1px solid #e8cbdb}.catalogo-lateral-pie{display:none}.catalogo-grilla{gap:12px}.catalogo-grilla .catalogo-tarjeta{padding:9px}.catalogo-barra h2{font-size:1.7rem}}
+@media (max-width:390px) {.catalogo-grilla{grid-template-columns:1fr}}
+
+/* Solicitud de pedido: conserva la paleta de Baby Store */
+.pedido-dialog{border:1px solid #e8bdd2;border-radius:18px;padding:24px;width:min(440px,calc(100vw - 24px));max-height:90vh;overflow-y:auto;background:#fff7fb;color:#4a2c3d;box-shadow:0 16px 50px #34152455}
+.pedido-dialog::backdrop{background:#28131fc7}
+.pedido-cabecera{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pedido-cabecera h2{font-size:1.7rem;margin:0}
+.pedido-cerrar{border:0;border-radius:50%;background:#f4d8e7;color:#4a2c3d;font-size:1.6rem;width:40px;height:40px;cursor:pointer}
+.pedido-formulario{display:grid;gap:10px;margin-top:17px}
+.pedido-formulario label{font-weight:600;font-family:'Fredoka',sans-serif}
+.pedido-formulario input{padding:12px;border:1px solid #dcb5c9;border-radius:10px;background:white;color:#4a2c3d;font:inherit;width:100%;box-sizing:border-box}
+.pedido-privacidad{font-size:.8rem;color:#775f6d;line-height:1.45;margin:6px 0}
+#pedidoMensaje{min-height:2.2em;line-height:1.4;font-size:.9rem}
+.pedido-formulario button:disabled{opacity:.6;cursor:wait}
+.pedido-dialog :focus-visible{outline:3px solid #a35480;outline-offset:3px}
